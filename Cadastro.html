@@ -1,32 +1,74 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="pt-BR">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Agenda</title>
-</head>
-<body>
-     <button type="button">Salvar</button>
-            <button type="button">X</button>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Cadastro de Contatos</title>
+  </head>
+  <body>
+    <nav><a href="AgendaDeContatos.html">Voltar para a Agenda</a></nav>
+    <button type="button">Salvar</button>
+    <button type="button">X</button>
     <h1>Cadastrar Contato</h1>
+    <section>
+      <form id="formCadastro">
+        <label for="nome">Nome:</label><br /><input
+          type="text"
+          id="nome"
+          placeholder="Digite o nome"
+          required
+        /><br /><br />
+        <label for="sobrenome">Sobrenome:</label><br />
+        <input type="text" id="sobrenome" placeholder="Digite o sobrenome" />
+        <br /><br />
 
-        <div>
-            <form>
-                <input type="text" placeholder="Nome">
-                <br>
-                <input type="text" placeholder="Sobrenome">
-                <br>
-                <input type="text" placeholder="Empresa">
-                <fieldset>
-                <legend>Telefone(Celular)</legend>
-                <input type="number" placeholder="(00) 0000-0000"> 
-                </fieldset>
-            </form>
-            <br>
-            <label>Observações:</label>
-            <textarea name="Observações" cols="40" >
-            </textarea>
-           
-        </div>
-</body>
+        <label for="empresa">Empresa:</label><br />
+        <input type="text" id="empresa" placeholder="Nome da empresa" />
+        <br /><br />
+
+        <fieldset>
+          <legend>Telefone (Celular)</legend>
+          <input
+            type="tel"
+            id="telefone"
+            placeholder="(92) 99999-9999"
+            required
+          />
+        </fieldset>
+        <br />
+
+        <label for="observacoes">Observações:</label><br />
+        <textarea
+          id="observacoes"
+          name="observacoes"
+          rows="4"
+          cols="40"
+          placeholder="Anotações adicionais..."
+        ></textarea>
+        <br /><br />
+
+        <button type="submit">Salvar Contato</button>
+        <a href="AgendaDeContatos.html"
+          ><button type="button">Cancelar</button></a
+        >
+      </form>
+    </section>
+    <!-- <div>
+      <form>
+        <input type="text" placeholder="Nome" />
+        <br />
+        <input type="text" placeholder="Sobrenome" />
+        <br />
+        <input type="text" placeholder="Empresa" />
+        <fieldset>
+          <legend>Telefone(Celular)</legend>
+          <input type="number" placeholder="(00) 0000-0000" />
+        </fieldset>
+      </form>
+      <br />
+      <label>Observações:</label>
+      <textarea name="Observações" cols="40"> </textarea>
+    </div> -->
+    <script src="js/agenda.js"></script>
+  </body>
 </html>
