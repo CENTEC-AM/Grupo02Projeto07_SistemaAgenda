@@ -1,0 +1,48 @@
+.imagemPerfil{
+    display: flex; 
+    margin: auto;
+    justify-content: center;
+}
+.imagemPerfil img{
+    border-radius: 50%;
+    object-fit: cover;
+    padding: 5%;
+}
+#contatar-container {
+     display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    gap: 2px;
+    width: 100%;
+    flex-wrap: wrap;
+    justify-content: center;
+
+}
+
+.card_container {
+    flex-direction: row;
+    align-items: center;
+    width: 150px;
+    height: 100px;
+    background-color: rgb(255, 255, 255);
+}
+
+.card-icone {
+    display: flex;
+    flex-direction:row;
+    align-items: center;
+    border: 5px solid;
+    padding: 5px;
+    flex-wrap: wrap;
+    
+
+}
+
+.card-icone i {
+    font-size: 20px;
+}
+.botoes{
+    display: flex;
+    justify-content: space-around;
+    padding: 20px;
+}
