@@ -38,6 +38,49 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   }
 
+  // ====== ATUALIZAR (EDITAR) ======
+  const formAtualizar = document.querySelector("#formAtualizar");
+
+  if (formAtualizar) {
+    // Pega o id da URL (ex: Atualizar.html?id=123)
+    const params = new URLSearchParams(window.location.search);
+    const id = Number(params.get("id"));
+
+    // Se existir um id, busca o contato e preenche o formulário
+    if (id) {
+      const contato = obterContatoPorId(id);
+      if (contato) {
+        document.querySelector("#nome").value = contato.nome;
+        document.querySelector("#sobrenome").value = contato.sobrenome;
+        document.querySelector("#empresa").value = contato.empresa;
+        document.querySelector("#telefone").value = contato.telefone;
+        document.querySelector("#observacoes").value = contato.observacoes;
+      }
+    }
+
+    // Quando o formulário for enviado
+    formAtualizar.addEventListener("submit", (event) => {
+      event.preventDefault();
+
+      const contatos = obterContatos();
+      const index = contatos.findIndex((c) => c.id === id);
+
+      if (index !== -1) {
+        contatos[index] = {
+          id: id,
+          nome: document.querySelector("#nome").value.trim(),
+          sobrenome: document.querySelector("#sobrenome").value.trim(),
+          empresa: document.querySelector("#empresa").value.trim(),
+          telefone: document.querySelector("#telefone").value.trim(),
+          observacoes: document.querySelector("#observacoes").value.trim(),
+        };
+        salvarContatos(contatos);
+        alert("Contato atualizado com sucesso!");
+        window.location.href = "AgendaDeContatos.html";
+      }
+    });
+  }
+
   // Renderizar a tabela
   const tabelaContatos = document.querySelector("#tabelaContatosCorpo");
   if (tabelaContatos) {
@@ -68,8 +111,11 @@ function renderizarTabela() {
       <td>${contato.telefone}</td>
       <td>${contato.observacoes}</td>
       <td>
-        <button onclick="removerContato(${contato.id})">Excluir</button>
-      </td>
+  <a href="Contato.html?id=${contato.id}"><button>Visualizar</button></a>
+  <a href="Atualizar.html?id=${contato.id}"><button>Editar</button></a>
+  <button onclick="removerContato(${contato.id})">Excluir</button>
+</td>
+      
     `;
     corpoTabela.appendChild(linha);
   });
@@ -83,4 +129,10 @@ function removerContato(id) {
     salvarContatos(contatos);
     renderizarTabela();
   }
+}
+
+// Função que retorna um contato específico pelo ID
+function obterContatoPorId(id) {
+  const contatos = obterContatos();
+  return contatos.find((contato) => contato.id === id);
 }
