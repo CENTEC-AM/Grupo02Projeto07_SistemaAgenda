@@ -1,17 +1,154 @@
 <!doctype html>
-<html lang="en">
+<html lang="pt-BR">
   <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Ordenação</title>
+    
+    <!-- Bootstrap -->
     <link
       href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css"
       rel="stylesheet"
       integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB"
       crossorigin="anonymous"
-    />
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Ordenação</title>
+      />
+    
+    <!-- css interno -->
+    <style>
+/* --- CONFIGURAÇÕES GERAIS --- */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  /* Mesma paleta de gradiente azul das páginas anteriores */
+  background: linear-gradient(135deg, #eaf2f8, #dce9f3);
+  min-height: 100vh;
+  color: #172b3a;
+  font-family: Arial, Helvetica, sans-serif;
+  
+  /* Alinhamento vertical do cabeçalho, conteúdo e rodapé */
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+/* --- CABEÇALHO (HEADER) --- */
+header {
+  background-color: #23445d;
+  padding: 25px 20px;
+  text-align: center;
+  box-shadow: 0 4px 10px rgba(35, 68, 93, 0.15);
+}
+
+header h1 {
+  color: #ffffff;
+  font-size: 28px;
+  font-weight: bold;
+}
+
+/* --- CONTAINER PRINCIPAL --- */
+.filtro-container {
+  flex: 1; /* Garante que o conteúdo empurre o rodapé para baixo */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 40px 20px;
+}
+
+/* --- LISTA DE FILTROS --- */
+.lista-filtros {
+  list-style: none;
+  width: 100%;
+  max-width: 500px;
+  
+  /* Organiza os filtros em uma grade de 2 colunas */
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 15px;
+}
+
+.lista-filtros li a {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 60px;
+  background-color: #ffffff;
+  color: #2f6688;
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 16px;
+  border: 1px solid #cbdbe7;
+  border-radius: 10px;
+  box-shadow: 0 4px 12px rgba(35, 68, 93, 0.06);
+  transition: all 0.25s ease;
+}
+
+/* Efeito ao passar o mouse nos filtros */
+.lista-filtros li a:hover {
+  background-color: #23445d;
+  color: #ffffff;
+  border-color: #23445d;
+  transform: translateY(-3px);
+  box-shadow: 0 8px 18px rgba(35, 68, 93, 0.15);
+}
+
+/* Efeito de clique */
+.lista-filtros li a:active {
+  transform: scale(0.97);
+}
+
+/* --- RODAPÉ (FOOTER) --- */
+footer {
+  background-color: #172b3a;
+  color: #7da6c2;
+  text-align: center;
+  padding: 15px;
+  font-size: 14px;
+  font-weight: 500;
+  letter-spacing: 1px;
+}
+
+/* --- RESPONSIVIDADE (MOBILE) --- */
+@media (max-width: 480px) {
+  .lista-filtros {
+    /* Em telas muito pequenas, os filtros viram uma única coluna vertical */
+    grid-template-columns: 1fr;
+    gap: 10px;
+  }
+  
+  header h1 {
+    font-size: 22px;
+  }
+}
+    </style>
+
   </head>
   <body>
+    
+    <!-- Cabeçalho -->
+    <header>
+      <h1>Filtros de Pesquisa</h1>
+    </header>
+      
+    <!-- Conteúdo principal  -->
+    <main class="filtro-container">
+      <ul class="lista-filtros">
+        <!-- Ordenação -->
+        <li><a href="#">A-Z</a></li>
+        <li><a href="#">Z-A</a></li>
+        <li><a href="#">Empresa</a></li>
+        <li><a href="#">Escola</a></li>
+        <li><a href="#">Família</a></li>
+        <li><a href="#">Amigos</a></li>
+      </ul>
+    </main>
+
+    <!-- Rodapé -->
+    <footer>Manaus-AM</footer>
+
     <script
       src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
       integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI"
