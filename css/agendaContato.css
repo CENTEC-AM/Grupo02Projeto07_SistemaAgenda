@@ -1,0 +1,167 @@
+/* =========================
+AGENDA DE CONTATOS
+CSS3 EXTERNO
+========================= */
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  }
+
+body {
+font-family: Arial, Helvetica, sans-serif;
+background: #eef3f6;
+min-height: 100vh;
+}
+
+/* =========================
+CONTAINER PRINCIPAL
+========================= */
+
+.container {
+max-width: 1100px;
+margin: 40px auto !important;
+background: #ffffff;
+padding: 30px;
+border-radius: 10px;
+box-shadow: 0 5px 18px rgba(0, 0, 0, 0.10);
+}
+
+/* =========================
+TÍTULO
+========================= */
+
+h1 {
+color: #2f6688;
+font-size: 30px;
+font-weight: bold;
+text-align: center;
+padding-bottom: 15px;
+margin-bottom: 25px;
+border-bottom: 3px solid #2f6688;
+}
+
+/* =========================
+BOTÕES
+========================= */
+
+.botoes {
+display: flex;
+justify-content: center;
+gap: 12px;
+margin-bottom: 25px;
+}
+
+.botoes a {
+text-decoration: none;
+}
+
+.botoes button {
+background: #2f6688;
+color: #ffffff;
+border: 2px solid #2f6688;
+padding: 11px 20px;
+border-radius: 6px;
+font-size: 14px;
+font-weight: 600;
+cursor: pointer;
+transition: all 0.3s ease;
+}
+
+/* Efeito ao passar o mouse */
+
+.botoes button:hover {
+background: #ffffff;
+color: #2f6688;
+transform: translateY(-2px);
+box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+}
+
+/* =========================
+TABELA
+========================= */
+
+.table {
+width: 100%;
+border-collapse: collapse;
+margin-top: 10px;
+}
+
+/* Cabeçalho da tabela */
+
+.table thead th {
+background: #2f6688 !important;
+color: #ffffff !important;
+padding: 14px;
+font-size: 14px;
+font-weight: bold;
+text-align: center;
+border: none;
+}
+
+/* Conteúdo da tabela */
+
+.table tbody td {
+padding: 13px 14px;
+color: #334155;
+font-size: 14px;
+vertical-align: middle;
+text-align: center;
+}
+
+/* Linhas da tabela */
+
+.table tbody tr {
+transition: all 0.2s ease;
+}
+
+/* Efeito ao passar o mouse */
+
+.table tbody tr:hover {
+background-color: #e5f0f5 !important;
+}
+
+/* Coluna Ações */
+
+.table th:last-child,
+.table td:last-child {
+text-align: center;
+}
+
+/* =========================
+RESPONSIVIDADE
+========================= */
+
+@media (max-width: 768px) {
+
+.container {
+    margin: 20px 10px !important;
+    padding: 20px;
+}
+
+h1 {
+    font-size: 24px;
+}
+
+.botoes {
+    flex-direction: column;
+    align-items: center;
+}
+
+.botoes a {
+    width: 100%;
+}
+
+.botoes button {
+    width: 100%;
+}
+
+.table {
+    display: block;
+    overflow-x: auto;
+    white-space: nowrap;
+}
+
+
+}

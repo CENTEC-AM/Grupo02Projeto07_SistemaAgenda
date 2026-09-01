@@ -1,47 +1,64 @@
 <!doctype html>
 <html lang="pt-BR">
-  <head>
-    <link rel="stylesheet" href="css/fundo.css">
-    <link
-      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css"
-      rel="stylesheet"
-      integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB"
-      crossorigin="anonymous"
-    />
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Agenda de contatos</title>
-    <link rel="stylesheet" href="css/Style.css" />
-  </head>
 
-  <body>
-    <div class="container mt-4">
-      <h1>Agenda de Contatos</h1>
-      <nav>
-        <a href="Cadastro.html">Novo Contato</a>
-        <a href="Pesquisar.html">Pesquisar</a>
-        <a href="Ordenacao.html">Ordenar</a>
-      </nav>
-      <table class="table table-striped table-hover table-bordered">
-        <thead>
-          <tr>
-            <th>Nome</th>
-            <th>Empresa</th>
-            <th>Telefone</th>
-            <th>Observações</th>
-            <th>Ações</th>
-          </tr>
-        </thead>
-        <tbody id="tabelaContatosCorpo">
-          <!-- Linhas inseridas dinamicamente pelo JavaScript -->
-        </tbody>
-      </table>
+<head>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet"
+  integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous" />
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="css/agendaContato.css">
+  <title>Agenda de contatos</title>
+</head>
+
+<body>
+  
+  <div class="container mt-4">
+    <h1>Agenda de Contatos</h1>
+
+    <div class="botoes">
+
+
+      <a href="Cadastro.html">
+        <button type="button">
+          Novo Cadastro
+        </button>
+      </a>
+
+      <a href="Pesquisar.html">
+        <button type="button">
+          Pesquisar Contato
+        </button>
+      </a>
+
+    <a href="Ordenacao.html">
+        <button type="button">
+          Ordenação
+        </button>
+      </a>
+
+
     </div>
-    <script src="js/agenda.js"></script>
-    <script
-      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
-      integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI"
-      crossorigin="anonymous"
-    ></script>
-  </body>
+
+
+    <table class="table table-striped table-hover table-bordered">
+      <thead>
+        <tr>
+          <th>Nome</th>
+          <th>Empresa</th>
+          <th>Telefone</th>
+          <th>Observações</th>
+          <th>Ações</th>
+        </tr>
+      </thead>
+      <tbody id="tabelaContatosCorpo">
+        <!-- Linhas inseridas dinamicamente pelo JavaScript -->
+      </tbody>
+    </table>
+  </div>
+  <script src="js/agenda.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI"
+    crossorigin="anonymous"></script>
+</body>
+
 </html>
